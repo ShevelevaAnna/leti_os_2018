@@ -23,15 +23,11 @@ start:
 	add sp, 128    ;передвигаем sp на верхушку стека
 	
 	push	ax
-	push	es
-	push	cx
 	
 	in	al,60h  
 	cmp	al,2dh  ;код клавиши x
 	jz	do_req
 
-	pop cx
-	pop	es
 	pop	ax
 
 	mov ss, Save_SS  ;возвращаем стек
